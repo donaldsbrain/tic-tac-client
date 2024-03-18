@@ -5,8 +5,7 @@ import { environment } from "./environment";
 
 type UpdateCallback = (update: SeriesSummary) => void;
 
-export const subscribe = (id: SeriesId | PlayerId, onUpdate: UpdateCallback) => {
-    console.log('ON UPDATE', onUpdate);
+export const subscribe = (id: SeriesId | PlayerId, onUpdate: UpdateCallback) => {    
     const {protocol, host, port} = environment.socketIo;
     const socket: Socket<ServerToClientEvents, ClientToServerEvents> = io(`${protocol}://${host}:${port}`);
     socket.on("connect", () => {
