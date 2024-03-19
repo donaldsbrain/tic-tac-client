@@ -12,8 +12,11 @@ const playSeries = (series: SeriesCreated) => {
     subscribe(series.id, playerO.onUpdate);
 }
 
-createSeries(2)
-    .then(playSeries)
+createSeries(100, 15, 'The Big One')
+    .then(sc => {
+        console.log(`Series ${sc.id} created!`);
+        setTimeout(() => playSeries(sc), 10000);
+    })
     .catch(console.error);
 
 

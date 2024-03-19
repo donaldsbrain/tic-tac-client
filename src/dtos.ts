@@ -39,6 +39,7 @@ export type SeriesId = string;
 
 export type SeriesSummary = {
     id: SeriesId
+    name: string
     currentGame: [GameSummary] | []
     timeControlSeconds: number
     gamesCompletedCount: number

@@ -63,8 +63,10 @@ export const getPlayer = (playerId: PlayerId, positionValue: PositionValue) => {
         }
 
         console.log(`${positionValue}: It's my turn, but no one has made me smart yet. I will just do something random for series ${summary.id}.`);
-        randomMove(playerId)            
-            .catch(error => console.error(`Error making random move: ${error.message}`));
+        setTimeout(() => {
+            randomMove(playerId)            
+                .catch(error => console.error(`Error making random move: ${error.message}`));            
+        }, 100)
     }
 
     return {

@@ -6,10 +6,10 @@ const getUrl = (append: string) => {
     return `${protocol}://${host}:${port}${append}`;
 }
 
-export const createSeries = (gameCount: number): Promise<SeriesCreated> => 
+export const createSeries = (gameCount: number, timeControlSeconds: number, seriesName: string): Promise<SeriesCreated> => 
     fetch(getUrl('/series'), {
         method: 'POST',
-        body: JSON.stringify({gameCount}),
+        body: JSON.stringify({gameCount, timeControlSeconds, seriesName}),
         headers: {'Content-Type': 'application/json'},
     })
         .then<SeriesCreated> (response => response.json())
