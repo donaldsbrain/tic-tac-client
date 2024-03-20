@@ -18,9 +18,9 @@ const playSeries = (playerId: PlayerId | SeriesId) => {
         });
 }
 
-//playSeries('5759a838-e670-4b16-bc7c-62560fc8a4ee'); // X
+playSeries('1ebb5402-3fa1-47fd-8649-0c8d56a2ed04'); // X
 
-// playSeries(''); // O
+playSeries('e4d161b7-95c8-4814-be5a-beb583959d8a'); // O
 
 // createSeries(100, 15, 'The Big One', 'A series of 100 games with a 15 second time control')
 //     .then(sc => {

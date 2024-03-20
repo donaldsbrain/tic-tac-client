@@ -81,4 +81,9 @@ export type TurnInProgress = {
     toMove: PositionValue
 }
 
+type WebHooksSubscription = {
+    playerId: PlayerId
+    url: string
+}
+
 export type Winner = 'X' | 'O' | 'CAT'
