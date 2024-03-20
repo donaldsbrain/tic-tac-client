@@ -1,5 +1,5 @@
 import { Socket, io } from "socket.io-client";
-import { ClientToServerEvents, ServerToClientEvents } from "./socket-events";
+import { ClientToServerEvents, ServerToClientEvents } from "./socketEvents";
 import { PlayerId, SeriesId, SeriesSummary } from "./dtos";
 import { environment } from "./environment";
 

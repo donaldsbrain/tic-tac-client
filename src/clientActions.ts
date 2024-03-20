@@ -21,7 +21,7 @@ export const getSeries = (seriesId: SeriesId | PlayerId): Promise<SeriesSummary>
         .then<SeriesSummary> (response => response.json())
 
 export const getId = (id: SeriesId | PlayerId): Promise<IdLookupResponse> =>
-    fetch(getUrl(`/series/${id}/summary`), {
+    fetch(getUrl(`/id/${id}`), {
         method: 'GET'
     })
         .then<IdLookupResponse> (response => response.json());
