@@ -27,8 +27,9 @@ const playSeries = (playerId: PlayerId | SeriesId) => {
 //         console.log(`Series ${sc.id} created!`);
 //         console.log(`PlayerX: ${sc.playerIds.x} PlayerO: ${sc.playerIds.o}`);        
 //         setTimeout(() => {
-//             playSeries(sc.playerIds.x), 10000;
-//         });        
+//             playSeries(sc.playerIds.x);
+//             playSeries(sc.playerIds.o);
+//         }, 10000);        
 //     })
 //     .catch(console.error);
 

@@ -1,9 +1,34 @@
 const boardPositions = [0, 1, 2, 3, 4, 5, 6, 7, 8] as const;
 type BoardPosition = typeof boardPositions[number];
 
+type ArchivedGame = {
+    winner: Winner | 'unknown'
+    turns: {
+        value: PositionValue,
+        position: FullPosition
+        lengthSeconds: number
+    }[]
+}
+
+export type ArchivedSeries = {
+    id: SeriesId
+    name: string
+    archivedAt: Date
+    description: string
+    timeControlSeconds: number
+    games: ArchivedGame[]
+}
+
 export type AvailableMoveResponse = {
     turn: TurnInProgress
     available: FullPosition[]
+}
+
+export type CreateSeriesRequest = {
+    gameCount: number
+    timeControlSeconds: number
+    seriesName: string
+    description: string
 }
 
 export type FullPosition = `${BoardPosition}:${BoardPosition}`;
@@ -55,3 +80,5 @@ export type TurnInProgress = {
     startTime: Date
     toMove: PositionValue
 }
+
+export type Winner = 'X' | 'O' | 'CAT'
