@@ -1,12 +1,12 @@
 
 import { PlayerId, SeriesId, } from "./dtos";
-import { createSeries, getId, getSeries } from "./clientActions";
+import { createSeries, getAvailableMoves, lookupId, getSeries, move } from "./clientActions";
 import { getPlayer } from "./player";
 import { subscribe } from "./socketSubscription";
 
 const playSeries = (playerId: PlayerId | SeriesId) => {
     
-    getId(playerId)
+    lookupId(playerId)
         .then(idLookup => {
             if (idLookup.type === 'series') {
                 console.log("I can't do anything with a series id! Computers don't like to watch.");
@@ -18,8 +18,9 @@ const playSeries = (playerId: PlayerId | SeriesId) => {
         });
 }
 
-playSeries('02f8c567-3395-46ca-8ddf-35d8b568ca80'); // X
-playSeries('85ddc1e2-8877-4570-8c7c-ff47fabf82a6'); // O
+//playSeries('5759a838-e670-4b16-bc7c-62560fc8a4ee'); // X
+
+// playSeries(''); // O
 
 // createSeries(100, 15, 'The Big One', 'A series of 100 games with a 15 second time control')
 //     .then(sc => {

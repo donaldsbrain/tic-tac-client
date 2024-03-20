@@ -20,7 +20,7 @@ type SeriesWithTurnInProgress = {
 
 export const getPlayer = (playerId: PlayerId, positionValue: PositionValue) => {
 
-    let lastGamesCompletedCount = -1;
+    let lastGamesCompletedCount = -1; // Mutation!?!?! Noooooooooooooo!
     let lastTurnsCompletedCount = -1;
 
     const onUpdate = (summary: SeriesSummary) => {        
@@ -33,7 +33,7 @@ export const getPlayer = (playerId: PlayerId, positionValue: PositionValue) => {
             }
         }
         if (summary.currentGame.length === 0) {
-            console.log(`${positionValue}: No game in progress for series ${summary.id}.`);
+            console.log(`${positionValue}: No game in progress for series ${summary.id}. I'm so scared!`);
             return;
         }
         if (summary.currentGame[0].currentTurn.length === 0) {
