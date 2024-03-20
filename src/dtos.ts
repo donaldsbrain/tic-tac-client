@@ -21,6 +21,12 @@ export type GameSummary = {
     previousMoves: {value: PositionValue, position: FullPosition}[]
 }
 
+export type IdLookupResponse = {
+    id: PlayerId | SeriesId
+    seriesId: SeriesId
+    type: 'playerX' | 'playerO' | 'series'
+}
+
 export type PlayerId = string;
 
 export type PositionValue = 'X' | 'O';

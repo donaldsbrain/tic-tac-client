@@ -1,4 +1,4 @@
-import { PlayerId, SeriesCreated, SeriesId, SeriesSummary } from "./dtos";
+import { IdLookupResponse, PlayerId, SeriesCreated, SeriesId, SeriesSummary } from "./dtos";
 import { environment } from "./environment";
 
 const getUrl = (append: string) => {    
@@ -17,10 +17,15 @@ export const createSeries = (gameCount: number, timeControlSeconds: number, seri
 export const getSeries = (seriesId: SeriesId | PlayerId): Promise<SeriesSummary> =>
     fetch(getUrl(`/series/${seriesId}/summary`), {
         method: 'GET'
-        // body: JSON.stringify({gameCount, timeControlSeconds, seriesName, description}),
-        // headers: {'Content-Type': 'application/json'},
     })
         .then<SeriesSummary> (response => response.json())
+
+export const getId = (id: SeriesId | PlayerId): Promise<IdLookupResponse> =>
+    fetch(getUrl(`/series/${id}/summary`), {
+        method: 'GET'
+    })
+        .then<IdLookupResponse> (response => response.json());
+
 
 export const randomMove = (playerId: PlayerId): Promise<SeriesSummary> => 
     fetch(getUrl(`/series/${playerId}/game/random-move`), {
