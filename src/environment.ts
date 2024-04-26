@@ -1,12 +1,12 @@
 export const environment = {
     rest: {
         protocol: 'http',
-        host: '192.168.130.142',
+        host: '127.0.0.1',
         port: 5173
     },
     socketIo: {
         protocol: 'ws',
-        host: '192.168.130.142',
+        host: '127.0.0.1',
         port: 5173 
     }    
 }
